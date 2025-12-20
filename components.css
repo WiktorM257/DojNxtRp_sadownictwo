@@ -1,0 +1,393 @@
+/* ========== DOJ – PALETA ========== */
+
+:root {
+    --primary: #1a3a5c;
+    --dark: #162e51;
+    --light: #ffffff;
+    --text-dark: #ffffff;
+    --accent: #C9A227;
+    --transition-fast: 160ms;
+    --transition-medium: 300ms;
+    --text-scale: 1.06;
+}
+
+html {
+    font-size: calc(16px * var(--text-scale));
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+    color: var(--light);
+    line-height: 1.6;
+}
+
+/* ========== BUTTONS – STYL BAZOWY (BEZ ZMIAN) ========== */
+
+.btn {
+    padding: .9rem 1.8rem;
+    border-radius: 8px;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    font-size: .95rem;
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    transition: all .3s;
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: var(--light);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--text-dark);
+    border: 2px solid var(--text-dark);
+}
+
+.btn-small {
+    padding: .6rem 1.2rem;
+    font-size: .85rem;
+}
+
+/* przycisk dokumentów – styl bazowy */
+.btn-doc {
+    background: rgba(255,255,255,.12);
+    color: var(--light);
+    border: 1.5px solid rgba(255,255,255,.35);
+    backdrop-filter: blur(10px);
+}
+
+/* ========== HERO – LAYOUT (BEZ ZMIAN STYLU) ========== */
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.hero-buttons .btn-hero {
+    flex: 0 0 auto;
+    width: auto;
+    margin: 0;
+}
+
+/* mobile hero */
+@media (max-width: 600px) {
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .hero-buttons .btn-hero {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* ========== GRID DOKUMENTÓW ========== */
+
+.docs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    align-items: stretch;
+}
+
+/* ========== KARTA DOKUMENTU ========== */
+
+.doc-card {
+    background: linear-gradient(145deg, rgba(22,46,81,.95), rgba(15,31,56,.98));
+    border: 1px solid rgba(201,162,39,.45);
+    border-radius: 16px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.doc-card p {
+    color: rgba(255,255,255,.85);
+    margin-bottom: 1.2rem;
+}
+
+/* stopka zawsze na dole */
+.doc-footer {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* ========== HOVER – TYLKO DOKUMENTY, BEZ WPŁYWU NA KARTY ========== */
+
+.doc-card .btn-doc {
+    transition:
+        background-color 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.2s ease;
+}
+
+.doc-card .btn-doc:hover {
+    background-color: rgba(201, 162, 39, 0.18);
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(201, 162, 39, 0.35);
+}
+
+/* zabezpieczenie – dokumenty nie wpływają na hero */
+.doc-card .btn {
+    flex: 0 0 auto;
+    width: auto;
+}
+
+/* ========== TYPOGRAFIA ========== */
+
+h1 { font-size: 2.25rem; }
+h2 { font-size: 1.75rem; }
+h3 { font-size: 1.25rem; }
+h4 { font-size: 1rem; }
+
+p, a, li, .btn {
+    font-size: 1rem;
+}
+
+
+/* =====================================================
+   DOKUMENTY – NOWY WYGLĄD KART (JAK NA 2. ZDJĘCIU)
+   ===================================================== */
+
+.documents {
+    background: #1f3f63;
+    padding: 4rem 1rem;
+}
+
+/* GRID */
+.documents .docs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+/* KARTA */
+.documents .doc-card {
+    background: linear-gradient(
+        180deg,
+        rgba(18, 38, 63, 0.95),
+        rgba(13, 29, 50, 0.98)
+    );
+    border-radius: 18px;
+    padding: 2rem 1.8rem;
+    border: 1px solid rgba(201, 162, 39, 0.35);
+    box-shadow: 0 20px 50px rgba(0,0,0,.35);
+
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+}
+
+/* hover KARTY (nie przycisku!) */
+.documents .doc-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--accent);
+    box-shadow: 0 25px 60px rgba(0,0,0,.45);
+}
+
+/* HEADER */
+.documents .doc-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+}
+
+/* IKONA */
+.documents .doc-icon i {
+    color: var(--accent);
+    font-size: 1.8rem;
+}
+
+/* TYTUŁ */
+.documents .doc-info h3 {
+    font-size: 1.2rem;
+    line-height: 1.35;
+    margin: 0 0 .3rem;
+    color: #ffffff;
+}
+
+/* WERSJA */
+.documents .doc-info span {
+    font-size: .85rem;
+    opacity: .75;
+}
+
+/* OPIS – KRÓTSZY (… jak na screenie) */
+.documents .doc-card p {
+    font-size: .95rem;
+    color: rgba(255,255,255,.85);
+    line-height: 1.55;
+    margin: .6rem 0 1.4rem;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* STOPKA */
+.documents .doc-footer {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* DATA */
+.documents .doc-meta {
+    font-size: .85rem;
+    opacity: .8;
+}
+
+/* PRZYCISK – TEN SAM CO WCZEŚNIEJ */
+.documents .btn-doc {
+    background: rgba(255,255,255,.12);
+    border: 1.5px solid rgba(255,255,255,.35);
+    color: #fff;
+}
+
+/* SUBMENU DOJ */
+
+.nav-links li {
+    position: relative;
+}
+
+.submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 220px;
+    background: #162e51;
+    border-radius: 8px;
+    padding: 10px 0;
+    display: none;
+    box-shadow: 0 10px 25px rgba(0,0,0,.25);
+    z-index: 1000;
+}
+
+.has-submenu:hover .submenu {
+    display: block;
+}
+
+.submenu li a {
+    display: block;
+    padding: 10px 20px;
+    white-space: nowrap;
+}
+
+.submenu li a:hover {
+    background: rgba(255,255,255,.08);
+}
+
+/* ikonka strzałki */
+.has-submenu > a i {
+    font-size: 0.75em;
+    margin-left: 6px;
+}
+.nav-links,
+.nav-links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.page-section {
+    max-width: 1200px;
+    margin: 140px auto;
+    padding: 0 20px;
+    color: white;
+}
+
+.image-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.image-wrapper img {
+    max-width: 100%;
+    border-radius: 14px;
+}
+
+/* ================================
+   DOJ – HIERARCHY PROFILE
+   ================================ */
+
+.doj-profile {
+    background-color: #162e51;
+    padding: 100px 0;
+    color: #ffffff;
+}
+
+.doj-profile-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+
+    display: flex;
+    gap: 60px;
+    align-items: center;
+}
+
+/* LEWA STRONA – ZDJĘCIE */
+.doj-profile-left img {
+    width: 360px;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+}
+
+/* PRAWA STRONA – TEKST */
+.doj-profile-right {
+    flex: 1;
+}
+
+.doj-rank {
+    margin: 0 0 12px;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #9fb6d9;
+    font-weight: 600;
+}
+
+.doj-name {
+    margin: 0 0 30px;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.doj-profile-right p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 720px;
+}
+
+/* RESPONSYWNOŚĆ */
+@media (max-width: 900px) {
+    .doj-profile-inner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .doj-profile-left img {
+        width: 260px;
+    }
+}
