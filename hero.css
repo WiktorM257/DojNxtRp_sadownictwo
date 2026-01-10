@@ -1,4 +1,3 @@
-/* ========== HERO SECTION - DOJ BROWN ========== */
 
 .hero {
     min-height: 60vh;
@@ -25,7 +24,7 @@
     align-items: center;
     gap: 1.5rem;
     margin-top: 2rem;
-    flex-wrap: wrap; /* zabezpieczenie */
+    flex-wrap: wrap; 
 }
 
 .hero-buttons .btn {
@@ -34,7 +33,6 @@
     justify-content: center;
 }
 
-/* ===== HERO BUTTONS – PREMIUM HOVER ===== */
 
 .hero-buttons .btn {
     transition: 
@@ -50,13 +48,11 @@
     box-shadow: 0 12px 30px rgba(201, 162, 39, 0.45);
 }
 
-/* złoty hover dla PRIMARY */
 .hero-buttons .btn-primary:hover {
     background-color: var(--accent-hover);
     color: #fff;
 }
 
-/* outline → złoto */
 .hero-buttons .btn-outline:hover {
     background-color: rgba(201, 162, 39, 0.15);
     border-color: var(--accent);

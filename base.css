@@ -1,10 +1,5 @@
-/* =====================
-   BASE.CSS - DOJ GRANATOWA PALETA
-   Kolor przewodni: #162e51
-   ===================== */
 
 :root {
-    /* Kolory główne - granatowa paleta */
     --primary: #1a3a5c;           /* Ciemny granat - główne tło */
     --dark: #162e51;              /* GŁÓWNY kolor - ciemniejszy granat */
     --dark-brown: #0f1f38;        /* Bardzo ciemny granat - kafelki */
@@ -15,11 +10,9 @@
     --text-dark: #162e51;         /* Ciemny tekst na jasnych elementach */
     --text-muted: rgba(22, 46, 81, .8); /* Przygaszony tekst */
     
-    /* Gradiety */
     --gradient-card: linear-gradient(145deg, rgba(22, 46, 81, 0.95), rgba(15, 31, 56, 0.98));
     --gradient-bg: linear-gradient(180deg, #2a4a6f 0%, #1a3a5c 100%);
     
-    /* Inne */
     --text-scale: 1;
 }
 
@@ -42,7 +35,6 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* Scrollbar - złoty */
 ::-webkit-scrollbar {
     width: 10px;
 }
@@ -60,7 +52,6 @@ body {
     background: var(--accent);
 }
 
-/* Loader */
 .loader {
     position: fixed;
     top: 0;
@@ -94,7 +85,6 @@ body {
     to { transform: rotate(360deg); }
 }
 
-/* Fade-in */
 .fade-in {
     opacity: 0;
     transform: translateY(30px);
@@ -107,7 +97,6 @@ body {
 }
 
 
-/* ========== ABOUT SECTION - BROWN ========== */
 
 .about {
     background: linear-gradient(180deg, var(--dark) 0%, var(--primary) 100%);

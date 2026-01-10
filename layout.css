@@ -1,4 +1,3 @@
-/* ========== NAVBAR - GRANATOWA PALETA ========== */
 
 nav {
     position: fixed;
@@ -84,7 +83,6 @@ nav.scrolled {
 
 
 
-/* SECTIONS */
 section {
     padding: 5rem 1.5rem;
 }
